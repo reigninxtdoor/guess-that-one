@@ -8,7 +8,19 @@ const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
 const word = "magnolia";
-let guessedLetters=[];
+const guessedLetters=[];
+const updatedGuesses=function(guessedLetters){
+guessedLettersElement.innerHTML ="";
+emptyArrays=[];
+const wordUpper=word.toUpperCase;
+const wordArray= wordUpper.split("");
+console.log(wordArray);
+guessesRight();
+}
+wordInProgress.innerText=wordShown.join("");
+
+
+
 // Display our symbols as placeholders for the chosen word's letters
 const placeholder = function (word) {
   const placeholderLetters = [];
@@ -50,5 +62,17 @@ placeholder();
   }
 const makeGuess=function(letter){
   console.log(guessedLetters);
-  
+  if (guessedLetters.includes(guess)) {
+    message.innerText = "You already guessed that letter, silly. Try again.";
+  } else {
+    guessedLetters.push(guess);
+    console.log(guessedLetters);
+    showGuessedLetters();
+    updateWordInProgress(guessedLetters);
+}
+const guessesRight=function(){
+  if(word.toUpperCase())
+    message.classList.add("win");
+    message.innerHTML=<p class="highlight">You guessed correct the word! Congrats!</p>.
+  )
 }
