@@ -73,6 +73,25 @@ const makeGuess=function(letter){
 const guessesRight=function(){
   if(word.toUpperCase())
     message.classList.add("win");
-    message.innerHTML=<p class="highlight">You guessed correct the word! Congrats!</p>.
-  )
+    message.innerHTML=<p class="highlight">You guessed correct the word! Congrats!</p>;
 }
+  let remainingGuesses= 8;
+  const winningGuess=function(guess){
+   const wordUp= word.toUpperCase();
+    if(wordUp.includes.guess){
+ message.innerText = `sorry no correct ${guess}.`;
+    remainingGuesses -= 1;
+  } else {
+    message.innerText = `Good job you have entered ${guess}.`;
+  }
+
+  if (remainingGuesses === 0) {
+    message.innerHTML = `All out of guesses, The word was <span class="highlight">${word}</span>.`;
+  } else if (remainingGuesses === 1) {
+    remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
+  } else {
+    remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
+  }
+    }
+  }
+
