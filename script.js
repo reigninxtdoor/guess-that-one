@@ -93,5 +93,24 @@ const guessesRight=function(){
     remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
   }
     }
+    startOver();
+
   }
+  const startOver=function(){
+    guessLetterButton.classList.add=("hide");
+    remainingGuessesElement.classList.add=("hide");
+    guessedLettersElement.classList.add=("hide");
+    playAgainButton.classList.remove=("hide");
+
+  }
+ playAgainButton.addEventListener("click",function(){
+  message.classList.remove("win");
+ let remainingGuesses=8;
+ guessedLetters=[];
+ remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;
+ guessedLettersElement.innerHTML = "";
+ message.innerText = "";
+ getWord();
+
+ })
 
